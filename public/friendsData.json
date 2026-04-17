@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Lionel Messi",
+    "picture": "https://i.ibb.co/example/messi.avif",
+    "email": "leo.m10@intermiami.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met during a football clinic. Incredible vision on and off the field.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "LeBron James",
+    "picture": "https://i.ibb.co/example/lebron.png",
+    "email": "kingjames@lakers.com",
+    "days_since_contact": 3,
+    "status": "on_track",
+    "tags": ["work", "mentor"],
+    "bio": "My team lead for the community sports project. High basketball IQ.",
+    "goal": 7,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 3,
+    "name": "Rafael Nadal",
+    "picture": "https://i.ibb.co/example/nadal.jpg",
+    "email": "rafa.nadal@academy.es",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["childhood friend", "distant"],
+    "bio": "Grew up playing tennis together. Hasn't stopped running since.",
+    "goal": 21,
+    "next_due_date": "2025-07-10"
+  },
+  {
+    "id": 4,
+    "name": "Stephen Curry",
+    "picture": "https://i.ibb.co/example/curry.avif",
+    "email": "chef.curry@warriors.com",
+    "days_since_contact": 1,
+    "status": "on_track",
+    "tags": ["family", "close friend"],
+    "bio": "My cousin. We practice three-pointers every weekend.",
+    "goal": 3,
+    "next_due_date": "2025-07-16"
+  },
+  {
+    "id": 5,
+    "name": "Kylian Mbappé",
+    "picture": "https://i.ibb.co/example/mbappe.jpg",
+    "email": "km7@realmadrid.com",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["networking", "tech"],
+    "bio": "Met at a sports-tech conference. Very interested in wearable data.",
+    "goal": 30,
+    "next_due_date": "2025-06-30"
+  },
+  {
+    "id": 6,
+    "name": "Serena Williams",
+    "picture": "https://i.ibb.co/example/serena.jpg",
+    "email": "serena@venture.com",
+    "days_since_contact": 12,
+    "status": "almost_due",
+    "tags": ["college", "study group"],
+    "bio": "Study partner from our business management class. Pure champion mindset.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 7,
+    "name": "Cristiano Ronaldo",
+    "picture": "https://i.ibb.co/example/cr7.jpg",
+    "email": "cr7.official@alnassr.com",
+    "days_since_contact": 8,
+    "status": "almost_due",
+    "tags": ["work", "colleague"],
+    "bio": "Works in the fitness department. First one in, last one to leave.",
+    "goal": 14,
+    "next_due_date": "2025-07-23"
+  },
+  {
+    "id": 8,
+    "name": "Lewis Hamilton",
+    "picture": "https://i.ibb.co/example/hamilton.jpg",
+    "email": "lh44@ferrari.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["travel friend", "distant"],
+    "bio": "Met during the Monaco GP. Loves fast cars and fashion.",
+    "goal": 30,
+    "next_due_date": "2025-06-25"
+  },
+  {
+    "id": 9,
+    "name": "Giannis Antetokounmpo",
+    "picture": "https://i.ibb.co/example/giannis.webp",
+    "email": "greekfreak@bucks.com",
+    "days_since_contact": 2,
+    "status": "on_track",
+    "tags": ["family", "brother"],
+    "bio": "My older brother. Huge appetite for both food and success.",
+    "goal": 7,
+    "next_due_date": "2025-07-17"
+  },
+  {
+    "id": 10,
+    "name": "Erling Haaland",
+    "picture": "https://i.ibb.co/example/haaland.webp",
+    "email": "erling.viking@mancity.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["online friend", "gaming"],
+    "bio": "Met through FIFA online. He plays just as aggressively in the game.",
+    "goal": 14,
+    "next_due_date": "2025-07-05"
+  }
+]
