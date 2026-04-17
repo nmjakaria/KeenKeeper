@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Lionel Messi",
-    "picture": "https://i.ibb.co/example/messi.avif",
+    "picture": "https://i.ibb.co.com/JWzjLBxy/Messi.png",
     "email": "leo.m10@intermiami.com",
     "days_since_contact": 12,
     "status": "overdue",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "LeBron James",
-    "picture": "https://i.ibb.co/example/lebron.png",
+    "picture": "https://i.ibb.co.com/ymc0TYH2/Le-Bron-James.jpg",
     "email": "kingjames@lakers.com",
     "days_since_contact": 3,
     "status": "on_track",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Rafael Nadal",
-    "picture": "https://i.ibb.co/example/nadal.jpg",
+    "picture": "https://i.ibb.co.com/xSvhQkDK/Rafael-Nadal.avif",
     "email": "rafa.nadal@academy.es",
     "days_since_contact": 30,
     "status": "overdue",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Stephen Curry",
-    "picture": "https://i.ibb.co/example/curry.avif",
+    "picture": "https://i.ibb.co.com/HLYgnD0K/4432171.png",
     "email": "chef.curry@warriors.com",
     "days_since_contact": 1,
     "status": "on_track",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Kylian Mbappé",
-    "picture": "https://i.ibb.co/example/mbappe.jpg",
+    "picture": "https://i.ibb.co.com/PGcbp7LS/france-kylian-mbappe-jun23.webp",
     "email": "km7@realmadrid.com",
     "days_since_contact": 60,
     "status": "overdue",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Serena Williams",
-    "picture": "https://i.ibb.co/example/serena.jpg",
+    "picture": "https://i.ibb.co.com/bMh0Xc93/images.jpg",
     "email": "serena@venture.com",
     "days_since_contact": 12,
     "status": "almost_due",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Cristiano Ronaldo",
-    "picture": "https://i.ibb.co/example/cr7.jpg",
+    "picture": "https://i.ibb.co.com/4Zw0Svrz/885.webp",
     "email": "cr7.official@alnassr.com",
     "days_since_contact": 8,
     "status": "almost_due",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Lewis Hamilton",
-    "picture": "https://i.ibb.co/example/hamilton.jpg",
+    "picture": "https://i.ibb.co.com/v66RXBrK/Hamilton-Australia-presser.webp",
     "email": "lh44@ferrari.com",
     "days_since_contact": 45,
     "status": "overdue",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Giannis Antetokounmpo",
-    "picture": "https://i.ibb.co/example/giannis.webp",
+    "picture": "https://i.ibb.co.com/1Gk8gchS/7e1c372820ccd5d52b140f8d03b99ed31b70f72b1a4036e941f4c4d3d02aa6b4.jpg",
     "email": "greekfreak@bucks.com",
     "days_since_contact": 2,
     "status": "on_track",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Erling Haaland",
-    "picture": "https://i.ibb.co/example/haaland.webp",
+    "picture": "https://i.ibb.co.com/j931GywH/3097.webp",
     "email": "erling.viking@mancity.com",
     "days_since_contact": 18,
     "status": "overdue",
