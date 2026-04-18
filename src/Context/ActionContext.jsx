@@ -1,10 +1,11 @@
 import React, { createContext, useState, useContext } from 'react';
+import { toast } from 'react-toastify';
 
 const ActionContext = createContext();
 
 export const ActionProvider = ({ children }) => {
 
-    const [interactions, setInteractions] = useState([]); 
+    const [interactions, setInteractions] = useState([]);
     const [filter, setFilter] = useState('all');
 
     const handleAction = (actionType, currentFriend) => {
@@ -15,6 +16,19 @@ export const ActionProvider = ({ children }) => {
             date: new Date()
         };
         setInteractions(prev => [newEntry, ...prev]);
+        toast.success(`${actionType.toUpperCase()} to ${currentFriend.name}`, {
+            style: {
+                borderRadius: '15px',
+                background: '#244D3F',
+                color: '#fff',
+                fontWeight: 'bold',
+
+            },
+            iconTheme: {
+                primary: '#fff',
+                secondary: '#244D3F',
+            },
+        autoClose: 1000,});
     };
 
     return (
