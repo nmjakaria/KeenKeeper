@@ -16,9 +16,9 @@ const Timeline = () => {
         <div className='container mx-auto p-4'>
             {/* Filter Dropdown */}
             <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-slate-800">Interaction Timeline</h2>
+                <h2 className="text-3xl font-bold text-slate-800">Timeline</h2>
                 <select 
-                    className="select select-bordered w-full max-w-xs rounded-xl"
+                    className="select select-bordered w-full max-w-xs rounded-xl font-medium"
                     value={filter}
                     onChange={(e) => setFilter(e.target.value)}
                 >
