@@ -1,12 +1,13 @@
-import React, { Suspense, use } from 'react';
+import React, { Suspense } from 'react';
 import InfoSection from './InfoSection';
 import FriendCard from '../shared/UI/FriendCard';
 import Loading from '../Loading/Loading';
+import useFriendData from '../../Hooks/useFriendData';
 
-const friendsPromise = fetch('/friendsData.json').then(res => res.json());
+
 
 const FriendList = () => {
-    const friends = use(friendsPromise);
+    const {friends} = useFriendData();
     return (
         <div className="cardSection grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {

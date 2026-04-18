@@ -1,20 +1,25 @@
 import React from 'react';
-import { useLoaderData, useParams, useNavigate } from 'react-router';
-import {  
-    Archive, 
-    Trash2, 
-    Phone, 
-    MessageSquare, 
-    Video, 
+import { useParams, useNavigate } from 'react-router';
+import {
+    Archive,
+    Trash2,
+    Phone,
+    MessageSquare,
+    Video,
     Edit3,
-    ArrowLeft, 
+    ArrowLeft,
     BellRing
 } from 'lucide-react';
+import useFriendData from '../../Hooks/useFriendData';
+import { useAction } from '../../Context/ActionContext';
 
 const FriendDetails = () => {
     const { id } = useParams();
-    const friends = useLoaderData();
+    const { friends } = useFriendData();
     const navigate = useNavigate();
+    const {handleAction } = useAction();
+
+
 
     // Find the specific friend based on the URL ID
     const exactFriend = friends.find(friend => friend.id === parseInt(id));
@@ -31,22 +36,22 @@ const FriendDetails = () => {
         );
     }
 
-    // Dynamic style for the status badge
     const getStatusClass = (status) => {
         switch (status?.toLowerCase()) {
             case 'overdue': return 'badge-error text-white';
-            case 'on-track': return 'bg-[#244D3F] text-white border-none';
+            case 'on_track': return 'bg-[#244D3F] text-white border-none';
             default: return 'bg-orange-400 text-white border-none';
         }
     };
+    
 
     return (
         <div className="bg-gray-100 min-h-screen pb-20">
             <div className="container mx-auto p-4 lg:p-10">
-                
+
                 {/* Back Button */}
-                <button 
-                    onClick={() => navigate(-1)} 
+                <button
+                    onClick={() => navigate(-1)}
                     className="flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors"
                 >
                     <ArrowLeft size={20} /> Back to Shelf
@@ -57,30 +62,35 @@ const FriendDetails = () => {
 
                     {/* LEFT COLUMN: Profile & Actions */}
                     <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
-                        
+
                         {/* Profile Summary Card */}
                         <div className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-2xl">
                             <div className="avatar mb-6">
-                                <div className="w-32 rounded-full ring ring-[#244D3F] ring-offset-base-100 ring-offset-4">
+                                <div className="w-24 rounded-full ring ring-[#244D3F] ring-offset-base-100 ring-offset-4">
                                     <img src={exactFriend.picture} alt={exactFriend.name} />
                                 </div>
                             </div>
                             <h2 className="text-3xl font-bold text-slate-800">{exactFriend.name}</h2>
-                            
+                            <div className={`mt-4 badge font-bold px-4 py-3 uppercase ${getStatusClass(exactFriend.status)}`}>
+                                {exactFriend.status}
+                            </div>
                             <div className="mt-4 flex flex-wrap justify-center gap-2">
-                                <span className={`badge font-bold px-4 py-3 ${getStatusClass(exactFriend.status)}`}>
-                                    {exactFriend.status}
-                                </span>
-                                <span className="badge bg-green-100 text-[#244D3F] border-none font-bold px-4 py-3">
-                                    {exactFriend.category || 'FRIEND'}
-                                </span>
+
+                                {exactFriend.tags?.map((tag, index) => (
+                                    <span
+                                        key={index}
+                                        className="badge bg-green-50 text-green-700 border-none font-bold text-[10px] px-3 py-3 uppercase tracking-widest"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
                             </div>
 
-                            <p className="mt-8 text-slate-500 italic text-lg leading-relaxed">
+                            <p className="mt-4 text-slate-500 italic text-md leading-relaxed">
                                 "{exactFriend.bio || 'No bio provided for this connection.'}"
                             </p>
-                            
-                            <div className="mt-6 pt-6 border-t border-slate-100 w-full text-center">
+
+                            <div className="mt-4 pt-6 border-t border-slate-100 w-full text-center">
                                 <p className="text-slate-400 text-sm">Preferred Channel</p>
                                 <p className="text-slate-700 font-semibold">{exactFriend.email}</p>
                             </div>
@@ -88,16 +98,16 @@ const FriendDetails = () => {
 
                         {/* Quick Actions Sidebar */}
                         <div className="flex flex-col gap-3">
-                            <button className="btn bg-white border-none hover:bg-slate-100 text-slate-700 normal-case justify-start gap-4 h-16 rounded-2xl shadow-md transition-all active:scale-95"> 
-                                <BellRing size={20} className="text-blue-500"/>
+                            <button className="btn bg-white border-none hover:bg-slate-100 text-slate-700 normal-case justify-start gap-4 h-16 rounded-2xl shadow-md transition-all active:scale-95">
+                                <BellRing size={20} className="text-blue-500" />
                                 <span className="font-bold">Snooze 2 Weeks</span>
                             </button>
                             <button className="btn bg-white border-none hover:bg-slate-100 text-slate-700 normal-case justify-start gap-4 h-16 rounded-2xl shadow-md transition-all active:scale-95">
-                                <Archive size={20} className="text-amber-500" /> 
+                                <Archive size={20} className="text-amber-500" />
                                 <span className="font-bold">Archive Connection</span>
                             </button>
                             <button className="btn bg-white border-none hover:bg-red-50 text-red-500 normal-case justify-start gap-4 h-16 rounded-2xl shadow-md transition-all active:scale-95">
-                                <Trash2 size={20} /> 
+                                <Trash2 size={20} />
                                 <span className="font-bold">Remove Friend</span>
                             </button>
                         </div>
@@ -143,23 +153,29 @@ const FriendDetails = () => {
                                 <h3 className="text-2xl font-bold text-slate-800">Quick Check-In</h3>
                                 <span className="text-slate-400 text-sm">Last contacted: {exactFriend.last_interacted || 'Unknown'}</span>
                             </div>
-                            
+
                             <div className=" grid grid-cols-3 gap-6">
-                                <button className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
+                                <button 
+                                onClick={() => handleAction('call', exactFriend)}
+                                className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
                                     <div className="p-4 bg-slate-300 rounded-full group-hover:bg-[#244D3F] group-hover:text-white transition-colors">
                                         <Phone size={28} />
                                     </div>
                                     <span className="font-bold text-slate-700">Call</span>
                                 </button>
-                                
-                                <button className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
+
+                                <button
+                                onClick={() => handleAction('text', exactFriend)}
+                                className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
                                     <div className="p-4 bg-slate-300 rounded-full group-hover:bg-[#244D3F] group-hover:text-white transition-colors">
                                         <MessageSquare size={28} />
                                     </div>
                                     <span className="font-bold text-slate-700">Text</span>
                                 </button>
-                                
-                                <button className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
+
+                                <button 
+                                onClick={() => handleAction('video', exactFriend)}
+                                className="group bg-slate-100 flex flex-col items-center justify-center gap-4 p-8 border-2 border-slate-50 rounded-3xl hover:border-[#244D3F] hover:bg-slate-50 transition-all active:scale-95">
                                     <div className="p-4 bg-slate-300 rounded-full group-hover:bg-[#244D3F] group-hover:text-white transition-colors">
                                         <Video size={28} />
                                     </div>
