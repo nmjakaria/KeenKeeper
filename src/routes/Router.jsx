@@ -3,6 +3,8 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import MainLayout from "../layouts/MainLayout";
 import HomePage from "../pages/Homepage/HomePage";
 import Timeline from "../pages/Timeline/Timeline";
+import FriendDetails from "../pages/FriendDetails/FriendDetails";
+import Stats from "../pages/Stats/Stats";
 
 export const router = createBrowserRouter([
     {
@@ -19,7 +21,13 @@ export const router = createBrowserRouter([
             
         },
         {
+            path: '/friendDetails/:id',
+            Component: FriendDetails,
+            loader: () => fetch('/friendsData.json').then(res => res.json())
+        },
+        {
             path: '/stats',
+            Component: Stats
         }
     ],
     errorElement: <ErrorPage></ErrorPage>

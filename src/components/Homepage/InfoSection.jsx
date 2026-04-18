@@ -1,7 +1,6 @@
 import React from 'react';
 
-const InfoSection = ({friend}) => {
-    console.log(friend);
+const InfoSection = () => {
     const stats = [
         { id: 1, value: "10", label: "Total Friends" },
         { id: 2, value: "3", label: "On Track" },
